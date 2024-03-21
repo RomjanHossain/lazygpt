@@ -93,7 +93,7 @@ public:
     } else {
       if (root.isMember("content")) {
         std::string quote = root["content"].asString();
-        std::cout << "Llama: " << quote << std::endl;
+        std::cout << "LazyGPT: " << quote << std::endl;
       }
     }
   }
@@ -119,12 +119,12 @@ public:
           "This is a conversation between User and Llama, a friendly chatbot. "
           "Llama is helpful, kind, honest, good at writing, and never fails to "
           "answer any requests immediately and with precision.\n\nUser: " +
-          prompt + "\nLlama:";
+          prompt + "\nLazyGPT:";
       // Populate JSON data with conversation parameters
       jsonData["n_predict"] = 400;
       jsonData["temperature"] = 1.7;
       jsonData["stop"].append("</s>");
-      jsonData["stop"].append("Llama:");
+      jsonData["stop"].append("LazyGPT:");
       jsonData["stop"].append("User:");
       jsonData["repeat_last_n"] = 256;
       jsonData["repeat_penalty"] = 1.18;
